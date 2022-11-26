@@ -1,7 +1,7 @@
 // Author: ariel593
-// Este proyecto esta basado en la documentacion de flutter sobre como consumir una API
+// Este proyecto está basado en la documentación de flutter sobre como consumir una API
 // https://flutter.dev/docs/cookbook/networking/fetch-data
-// Es necesario añadir la dependencia http en el archivo pubspec.yaml
+// Es necesario añadir la dependencia http en el archivo pubspec.yaml o escribiendo en la terminal: flutter pub add http
 import 'package:consuming_weather_api/src/home.dart';
 import 'package:flutter/material.dart';
 

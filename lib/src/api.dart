@@ -3,10 +3,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 Future<Weather> fetchWeather() async {
+  String cityCode = '3650472';
+  String apiKey = '30aaf473d7598d187815c79711d19bf4';
   final response = await http.get(Uri.parse(
       // El codigo de la ciudad de Tulcan es 3650472 usado en la URL
       // Usamos la API de OpenWeatherMap
-      'https://api.openweathermap.org/data/2.5/weather?id=3650472&appid=30aaf473d7598d187815c79711d19bf4'));
+      'https://api.openweathermap.org/data/2.5/weather?id=$cityCode&appid=$apiKey&units=metric&lang=es'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,

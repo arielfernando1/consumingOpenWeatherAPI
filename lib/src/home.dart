@@ -10,6 +10,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Future<Weather>? _weather;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,9 +29,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icon(
                     Icons.cloud,
                     size: 150.0,
-                    // Si
-                    // if the temperature is greater than 20 degrees, the color of the icon will be red
-                    color: snapshot.data!.temperature > 293.15
+                    // Si la tempeatura es mayor a 25 grados entonces el color del icono será rojo
+                    // Caso contrario será azul
+                    color: snapshot.data!.temperature > 25
                         ? Colors.red
                         : Colors.blue,
                   ),
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   Text(
-                    '${snapshot.data!.temperature.toString()} K',
+                    '${snapshot.data!.temperature.toString()} °C',
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   // himidity with icon
