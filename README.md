@@ -1,7 +1,5 @@
 # consuming_weather_api
-
-A new Flutter project.
-
+This project is a simple example of how to consume a weather API using Dart.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
