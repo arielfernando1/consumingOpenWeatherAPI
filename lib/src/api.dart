@@ -11,15 +11,15 @@ Future<Weather> fetchWeather() async {
       'https://api.openweathermap.org/data/2.5/weather?id=$cityCode&appid=$apiKey&units=metric&lang=es'));
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
+    // Si el servidor responde con 200 OK
     return Weather.fromJson(jsonDecode(response.body));
   } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
+    // Si el servidor no responde con 200 OK
     throw Exception('Failed to load weather');
   }
 }
+
+//get the weather icon from the API
 
 class Weather {
   final String city;

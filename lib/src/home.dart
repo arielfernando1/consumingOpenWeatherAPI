@@ -10,7 +10,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<Weather>? _weather;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +33,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: snapshot.data!.temperature > 25
                         ? Colors.red
                         : Colors.blue,
+                    shadows: const [
+                      Shadow(
+                        blurRadius: 50.0,
+                        color: Colors.black,
+                        offset: Offset(10.0, 10.0),
+                      ),
+                    ],
                   ),
                   Text(
                     snapshot.data!.city,
@@ -67,7 +73,16 @@ class _MyHomePageState extends State<MyHomePage> {
             return const CircularProgressIndicator();
           },
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+      // Reload the app
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() => fetchWeather());
+        },
+        tooltip: 'Actualizar',
+        child: const Icon(Icons.refresh),
+      ),
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
